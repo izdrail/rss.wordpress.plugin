@@ -1,0 +1,16 @@
+{
+  "name": "lzomedia/best-rss-importer",
+  "description": "",
+  "keywords": ["wordpress", "plugin"],
+  "homepage": "https://github.com/lzomedia/best-rss-importer",
+  "authors": [
+    {
+      "name": "Stefan Izdrail",
+      "homepage": "https://lzomedia.com"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=7.2"
+  }
+}
