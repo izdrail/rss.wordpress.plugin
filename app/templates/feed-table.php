@@ -37,11 +37,11 @@
 				<a href="#" class="button button-large button-primary add-row">
 					<?php _e('Add new feed', "rss-post-importer"); ?>
 				</a>
-				<!--<input type="hidden" name="feed_ids" id="feed_ids" value="<?php echo(join($feed_ids, ',')); ?>" />-->
+
 				<input type="hidden" name="deleted_feeds" id="deleted_feeds" value="" />
 				<input type="hidden" name="modified_feeds" id="modified_feeds" value="" />
 				<input type="hidden" name="new_feeds" id="new_feeds" value="" />
-                <input type="hidden" id="paused_feeds" name="paused_feeds" value="<?php echo(join($paused_feeds, ',')); ?>" />
+
 			</td>
 		</tr>
 <?php

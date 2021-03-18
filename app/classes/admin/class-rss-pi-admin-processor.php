@@ -208,10 +208,10 @@ class rssPIAdminProcessor {
 
         $settings = array(
             'frequency' => $frequency,
-            'feeds_api_key' => $_POST['feeds_api_key'],
+            'feeds_api_key' => '',
             'post_template' => stripslashes_deep($_POST['post_template']),
             'post_status' => sanitize_text_field($_POST['post_status']),
-            'author_id' => intval($_POST['author_id']),
+            'author_id' => 1,
             'allow_comments' => isset($_POST['allow_comments']) ? sanitize_text_field($_POST['allow_comments']) : '',
             'block_indexing' => sanitize_text_field($_POST['block_indexing']),
             'nofollow_outbound' =>sanitize_text_field($_POST['nofollow_outbound']),
@@ -335,7 +335,7 @@ class rssPIAdminProcessor {
                 'name' => $_POST[$id . '-name'],
                 'max_posts' => intval($_POST[$id . '-max_posts']),
                 // different author ids depending on valid API keys
-                'author_id' => ($this->is_key_valid && isset($_POST[$id . '-author_id'])) ? intval($_POST[$id . '-author_id']) : intval($_POST['author_id']),
+                'author_id' => 1,
                 'category_id' => (isset($_POST[$id . '-category_id'])) ? $_POST[$id . '-category_id'] : '',
                 'tags_id' => (isset($_POST[$id . '-tags_id'])) ? $_POST[$id . '-tags_id'] : '',
                 'keywords' => array_map('trim',$keywords),

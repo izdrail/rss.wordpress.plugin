@@ -234,10 +234,10 @@
 
 							<ul class="radiolist">
 								<li>
-									<label class="tooltips"><input type="radio" id="cache_deleted_true" name="cache_deleted" value="false" <?php echo($this->options['settings']['cache_deleted'] == 'false' ? 'checked="checked"' : ''); ?><?php echo $disabled; ?> /> <?php _e('Yes', 'rss-post-importer'); ?></label>
+									<label class="tooltips"><input type="radio" id="cache_deleted_true" name="cache_deleted" value="false" <?php echo($this->options['settings']['cache_deleted'] == 'false' ? 'checked="checked"' : ''); ?><?php echo false; ?> /> <?php _e('Yes', 'rss-post-importer'); ?></label>
 								</li>
 								<li>
-									<label><input type="radio" id="cache_deleted_false" name="cache_deleted" value="true" <?php echo($this->options['settings']['cache_deleted'] == 'true' || $this->options['settings']['cache_deleted'] == '' ? 'checked="checked"' : ''); ?><?php echo $disabled; ?> /> <?php _e('No', 'rss-post-importer'); ?></label>
+									<label><input type="radio" id="cache_deleted_false" name="cache_deleted" value="true" <?php echo($this->options['settings']['cache_deleted'] == 'true' || $this->options['settings']['cache_deleted'] == '' ? 'checked="checked"' : ''); ?><?php echo false; ?> /> <?php _e('No', 'rss-post-importer'); ?></label>
 								</li>
 							</ul>
 						</td>
