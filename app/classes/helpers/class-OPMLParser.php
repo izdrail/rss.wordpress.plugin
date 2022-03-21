@@ -61,14 +61,15 @@ class OPMLParser {
 		}
 	}
 
-	protected function loop($element) {
+	protected function loop(array $element):array
+    {
 		$data = array();
 
-		foreach ($element as $element) {
-			if ($element['type'] == 'rss' || isset($element['xmlUrl'])) {
-				$data[] = $this->format($element);
-			} elseif ($element->outline) {
-				$data[(string) $element['text']] = $this->loop($element->outline);
+		foreach ($element as $e) {
+			if ($e['type'] === 'rss' || isset($e['xmlUrl'])) {
+				$data[] = $this->format($e);
+			} elseif ($e->outline) {
+				$data[(string) $e['text']] = $this->loop($e->outline);
 			}
 		}
 

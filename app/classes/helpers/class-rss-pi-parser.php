@@ -9,7 +9,7 @@ class rssPIParser {
 
 	/**
 	 * Parse content
-	 * 
+	 *
 	 * @global object $rss_post_importer
 	 * @param object $item Feed item
 	 * @param string $feed_title Feed title
@@ -39,16 +39,14 @@ class rssPIParser {
 		$parsed_content = $this->_excerpt($parsed_content, $c);
 
 		// strip html, if needed
-		if ($strip_html == 'true') {
+		if ($strip_html === 'true') {
 			$parsed_content = strip_tags($parsed_content);
 		}
 
 		$parsed_content = preg_replace('/\{\$permalink\}/i', '<a href="' . esc_url($item->get_permalink()) . '" target="_blank">' . $item->get_title() . '</a>', $parsed_content);
 
 
-		$parsed_content = apply_filters('after_rss_pi_parse_content', $parsed_content);
-
-		return $parsed_content;
+        return apply_filters('after_rss_pi_parse_content', $parsed_content);
 	}
 
 	/*
@@ -62,7 +60,7 @@ class rssPIParser {
 
 	/**
 	 * Checks and creates an excerpts
-	 * 
+	 *
 	 * @param string $content Content
 	 * @return string
 	 */
