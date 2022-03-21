@@ -5,7 +5,7 @@
   Plugin URI: https://github.com/lzomedia/rss.wordpress.plugin
   Description: This plugin lets you set up an import posts from one or several rss-feeds and save them as posts on your site, simple and flexible.
   Author: LzoMedia
-  Version: 3.0
+  Version: 4.0
   Author URI: https://lzomedia.com/
   License: GPLv2 or later
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
