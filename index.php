@@ -77,3 +77,10 @@ $rss_post_importer = new rssPostImporter();
 
 $rss_post_importer->init();
 
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/lzomedia/rss.wordpress.pugin',
+    __FILE__,
+    'rss.wordpress.plugin'
+);
+$myUpdateChecker->setBranch('master');
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
