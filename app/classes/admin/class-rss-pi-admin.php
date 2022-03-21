@@ -115,7 +115,7 @@ class rssPIAdmin {
 	 * Add to admin menu
 	 */
 	function admin_menu() {
-        add_options_page('Rss Post Importer', 'Best Rss Importer', 'manage_options','rss_pi', array($this, 'screen'));
+        add_options_page('Rss Post Importer', 'Rss Wordpress Plugin', 'manage_options','rss_pi', array($this, 'screen'));
     }
 
 	/**
