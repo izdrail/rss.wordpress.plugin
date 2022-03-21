@@ -79,7 +79,7 @@ $rss_post_importer->init();
 include_once 'update/plugin-update-checker.php';
 
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/lzomedia/rss.wordpress.pugin',
+    'https://github.com/lzomedia/rss.wordpress.plugin',
     __FILE__,
     'rss.wordpress.plugin'
 );
