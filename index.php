@@ -1,11 +1,10 @@
 <?php
-
 /*
   Plugin Name: RSS WordPress Plugin
   Plugin URI: https://github.com/lzomedia/rss.wordpress.plugin
   Description: This plugin lets you set up an import posts from one or several rss-feeds and save them as posts on your site, simple and flexible.
   Author: LzoMedia
-  Version: 1.0
+  Version: 5.0
   Author URI: https://development.sh/
   License: GPLv2 or later
   License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,8 +37,8 @@ if (!defined('RSS_PI_LOG_PATH')) {
 	define('RSS_PI_LOG_PATH', trailingslashit(WP_CONTENT_DIR) . 'rsspi-log/');
 }
 
-if (!is_dir(RSS_PI_LOG_PATH)) {
-	mkdir(RSS_PI_LOG_PATH);
+if (!is_dir(RSS_PI_LOG_PATH) && !mkdir($concurrentDirectory = RSS_PI_LOG_PATH) && !is_dir($concurrentDirectory)) {
+    throw new \RuntimeException(sprintf('Directory "%s" was not created', $concurrentDirectory));
 }
 
 
@@ -70,17 +69,16 @@ include_once RSS_PI_PATH . 'app/class-rss-post-importer.php';
 
 // initialise plugin as a global var
 global $rss_post_importer;
-
 $rss_post_importer = new rssPostImporter();
-
 $rss_post_importer->init();
 
+// initiate the updater logic
 include_once 'update/plugin-update-checker.php';
-
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'https://github.com/lzomedia/rss.wordpress.plugin',
     __FILE__,
     'rss.wordpress.plugin'
 );
+
 $myUpdateChecker->setBranch('master');
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
